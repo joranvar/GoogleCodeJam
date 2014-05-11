@@ -27,3 +27,6 @@ test_solve2 = assertEqual (Solution 4) $ solve $ Problem ["aa","aa","bc","c"]
 
 test_solve3 :: IO ()
 test_solve3 = assertEqual (Solution 0) $ solve $ Problem ["abc","bcd"]
+
+test_singleInvalidCar_Solution0 =
+    assertEqual (Solution 0) $ solve $ Problem ["cac"]
