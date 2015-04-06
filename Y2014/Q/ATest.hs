@@ -52,3 +52,5 @@ test_problemBad_returnsBadMagician = assertEqual BadMagician $ solve . head . pa
 
 test_problemCheat_returnsVolunteerCheated :: IO ()
 test_problemCheat_returnsVolunteerCheated = assertEqual VolunteerCheated $ solve . head . parse . lines $ problemCheat
+
+{-# ANN module ("hlint:ignore Use camelCase"::String) #-}
