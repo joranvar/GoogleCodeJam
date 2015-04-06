@@ -1,6 +1,6 @@
 module Main where
 
-import Y2010.Q.B (solve, parse)
+import Y2010.Q.C (solve, parse)
 
 main :: IO ()
 main = getContents >>=
