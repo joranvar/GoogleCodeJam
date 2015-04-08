@@ -38,4 +38,4 @@ solve (Problem _board _k)
           horizWin x line = any (\l -> length l >= _k && head l == x) $ group line
           vertCheckWin x b = horizCheckWin x $ transpose b
           diagACheckWin x b = False
-          diagBCheckWin x b = diagBCheckWin x $ transpose b
+          diagBCheckWin x b = diagACheckWin x $ transpose b
