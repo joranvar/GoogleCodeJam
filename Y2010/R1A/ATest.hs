@@ -8,7 +8,7 @@ test_parse :: IO ()
 test_parse = assertEqual (Problem [[R,N,N,N],
                                    [B,R,N,N],
                                    [B,R,N,N],
-                                   [B,R,N,N]] 4)
+                                   [B,R,N,N]] 4 4)
              $ head $ parse
              ["4 4", "R...", "BR..", "BR..", "BR.."]
 
@@ -40,6 +40,15 @@ example3 = "3 3\n\
 \RB.\n\
 \RB."
 
+small = "7 3\n\
+\.......\n\
+\.......\n\
+\.......\n\
+\..R....\n\
+\B.B.RB.\n\
+\BRR.BR.\n\
+\RBR.RBB"
+
 test_example0 :: IO ()
 test_example0 = assertEqual (Solution False False) $ solve . head . parse . lines $ example0
 test_example1 :: IO ()
@@ -48,5 +57,7 @@ test_example2 :: IO ()
 test_example2 = assertEqual (Solution True False) $ solve . head . parse . lines $ example2
 test_example3 :: IO ()
 test_example3 = assertEqual (Solution False True) $ solve . head . parse . lines $ example3
+test_small :: IO ()
+test_small = assertEqual (Solution True True) $ solve . head . parse . lines $ small
 
 {-# ANN module ("hlint:ignore Use camelCase"::String) #-}
