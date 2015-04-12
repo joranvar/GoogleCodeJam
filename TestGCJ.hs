@@ -2,14 +2,10 @@
 module Main where
 
 import Test.Framework
--- import {-@ HTF_TESTS @-} Y2010.Q.ATest
--- import {-@ HTF_TESTS @-} Y2010.Q.BTest
--- import {-@ HTF_TESTS @-} Y2010.Q.CTest
-import {-@ HTF_TESTS @-} Y2010.R1A.ATest
--- import {-@ HTF_TESTS @-} Y2014.Q.ATest
--- import {-@ HTF_TESTS @-} Y2014.R1A.ATest
--- import {-@ HTF_TESTS @-} Y2014.R1C.ATest
--- import {-@ HTF_TESTS @-} Y2014.R1C.BTest
+-- import {-@ HTF_TESTS @-} Y2015.Q.ATest
+-- import {-@ HTF_TESTS @-} Y2015.Q.BTest
+-- import {-@ HTF_TESTS @-} Y2015.Q.CTest
+import {-@ HTF_TESTS @-} Y2015.Q.DTest
 
 main :: IO ()
 main = htfMain htf_importedTests
