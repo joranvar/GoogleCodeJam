@@ -20,6 +20,14 @@ parse (xrc:rest) =
 parse [] = []
 
 solve (Problem x r c)
+    -- After reading the #1 solution in java by contestant kyc, I
+    -- changed the following in order to pass the large test.  I have
+    -- been wondering why, until I finally drew this figure and tried
+    -- to fit it on a 3x5 board.
+    --
+    -- * *
+    -- ***
+    | x == 5 && r*c == 15 = Solution False
     | x == 1 = Solution True
     | r*c `mod` x /= 0 = Solution False
     | x > max r c = Solution False
