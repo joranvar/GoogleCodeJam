@@ -31,14 +31,15 @@ solve (Problem x s)
     | length s * x < 3 = Solution False
     | length (group s) == 1 = Solution False
     | foldl advance (QuaternionState False Nothing)
-      (concat $ replicate x (strip s)) /= QuaternionState True Nothing = Solution False
-    | foldl advance (QuaternionState False Nothing)
-      (concat $ replicate x (strip s)) == QuaternionState True Nothing = Solution True
-    | otherwise = Solution ((length s * x) `elem` isIjkable (concat $ replicate x (strip s)))
+      (concat $ replicate effectiveLength (strip s)) /= QuaternionState True Nothing = Solution False
+    | otherwise = Solution ((length s * effectiveLength) `elem` isIjkable (concat $ replicate effectiveLength (strip s)))
     where isIjkable s =
-              let hasI = last $ parseIJK I s (Just 0)
-                  hasJ = listToMaybe $ parseIJK J s (Just hasI)
-              in parseIJK K s hasJ
+            let hasI = last $ parseIJK I s (Just 0)
+                hasJ = listToMaybe $ parseIJK J s (Just hasI)
+            in parseIJK K s hasJ
+          effectiveLength
+                | x >= 4 = x `mod` 4 + 4
+                | otherwise = x
 
 parseIJK :: Quaternion -> String -> Maybe Int -> [Int]
 parseIJK q s i
