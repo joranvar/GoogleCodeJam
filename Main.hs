@@ -1,7 +1,10 @@
 module Main where
 
 import Control.Parallel.Strategies
-import Y2010.R1A.A (solve, parse)
+-- import Y2015.Q.A (solve, parse)
+-- import Y2015.Q.B (solve, parse)
+-- import Y2015.Q.C (solve, parse)
+import Y2015.Q.D (solve, parse)
 
 main :: IO ()
 main = getContents >>=
