@@ -1,8 +1,11 @@
 *~
+*.in
+*out*
+*.zip*
 /.HTF/
-/dist/
-/codejam-commandline-1.2-beta1/
-/*.in
-/*.out
-*.o
 *.hi
+*.o
+/codejam-commandline-1.2-beta1/
+/dist/
+/cabal.sandbox.config
+/.cabal-sandbox/
